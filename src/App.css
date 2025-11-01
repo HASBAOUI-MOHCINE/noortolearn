@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Custom Noor to Learn Color Palette */
+  --primary-blue: #00296b;
+  --secondary-blue: #003f88;
+  --accent-blue: #00509d;
+  --primary-yellow: #fdc500;
+  --secondary-yellow: #ffd500;
+  --text-light: #f4f4f4;
+  --text-dark: #333;
+  
+  /* Override default theme colors with our palette */
+  --background: var(--text-light);
+  --foreground: var(--text-dark);
+  --card: #ffffff;
+  --card-foreground: var(--text-dark);
+  --popover: #ffffff;
+  --popover-foreground: var(--text-dark);
+  --primary: var(--primary-blue);
+  --primary-foreground: #ffffff;
+  --secondary: var(--secondary-blue);
+  --secondary-foreground: #ffffff;
+  --muted: #f8f9fa;
+  --muted-foreground: #6c757d;
+  --accent: var(--primary-yellow);
+  --accent-foreground: var(--text-dark);
+  --destructive: #dc3545;
+  --border: #e9ecef;
+  --input: #e9ecef;
+  --ring: var(--accent-blue);
+  --chart-1: var(--primary-blue);
+  --chart-2: var(--secondary-blue);
+  --chart-3: var(--accent-blue);
+  --chart-4: var(--primary-yellow);
+  --chart-5: var(--secondary-yellow);
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--text-dark);
+  --sidebar-primary: var(--primary-blue);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--primary-yellow);
+  --sidebar-accent-foreground: var(--text-dark);
+  --sidebar-border: #e9ecef;
+  --sidebar-ring: var(--accent-blue);
+}
+
+.dark {
+  --background: var(--primary-blue);
+  --foreground: #ffffff;
+  --card: var(--secondary-blue);
+  --card-foreground: #ffffff;
+  --popover: var(--secondary-blue);
+  --popover-foreground: #ffffff;
+  --primary: var(--primary-yellow);
+  --primary-foreground: var(--text-dark);
+  --secondary: var(--accent-blue);
+  --secondary-foreground: #ffffff;
+  --muted: var(--accent-blue);
+  --muted-foreground: #ffffff;
+  --accent: var(--primary-yellow);
+  --accent-foreground: var(--text-dark);
+  --destructive: #dc3545;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: var(--primary-yellow);
+  --chart-1: var(--primary-yellow);
+  --chart-2: var(--secondary-yellow);
+  --chart-3: var(--accent-blue);
+  --chart-4: #ffffff;
+  --chart-5: #e9ecef;
+  --sidebar: var(--secondary-blue);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--primary-yellow);
+  --sidebar-primary-foreground: var(--text-dark);
+  --sidebar-accent: var(--accent-blue);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--primary-yellow);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+  }
+}
+
+/* Custom component styles */
+.noor-header {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  box-shadow: 0 2px 10px rgba(0, 41, 107, 0.1);
+}
+
+.noor-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+  color: white;
+}
+
+.noor-button-primary {
+  background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
+  color: var(--text-dark);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.noor-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(253, 197, 0, 0.3);
+}
+
+.noor-button-secondary {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.noor-button-secondary:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.noor-course-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.noor-course-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.noor-footer {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.noor-nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.noor-nav-link:hover {
+  color: var(--primary-yellow);
+}
+
+.noor-nav-link.active {
+  color: var(--primary-yellow);
+  font-weight: 600;
+}
+
+.noor-price-tag {
+  background: var(--primary-yellow);
+  color: var(--text-dark);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.noor-free-tag {
+  background: #28a745;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .noor-hero {
+    padding: 3rem 1rem;
+  }
+  
+  .noor-course-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .noor-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .noor-hero p {
+    font-size: 1rem;
+  }
+}
