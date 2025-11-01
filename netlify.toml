@@ -1,0 +1,10 @@
+[[build.environment]]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--version"
+
+[build]
+  publish = "dist"
+  command = "pnpm install && pnpm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-pnpm"
